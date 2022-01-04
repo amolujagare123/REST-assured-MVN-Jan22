@@ -22,7 +22,14 @@ public class DeckOfCards {
 
         JsonPath js = new JsonPath(response);
 
-        System.out.println("Deck id =" + js.getString("deck_id"));
+        String deckId =  js.getString("deck_id");
+
+        System.out.println("Deck id =" + deckId);
+
+
+        given().log().all().queryParam("count","2")
+                .when().get("/api/deck/"+deckId+"/draw")
+                .then().log().all().assertThat().statusCode(200);
 
 
     }

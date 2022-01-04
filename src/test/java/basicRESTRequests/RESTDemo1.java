@@ -8,7 +8,7 @@ public class RESTDemo1 {
 
     public static void main(String[] args) {
 
-        RestAssured.baseURI ="https://reqres.in/";
+      RestAssured.baseURI ="https://reqres.in/";
 
         given().log().all()
                 .queryParam("pages","2")
