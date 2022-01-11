@@ -42,8 +42,9 @@ public class CreateUserDataProviderExcel {
         XSSFSheet sheet = workbook.getSheet("Sheet1");
 
         int rowCount = sheet.getPhysicalNumberOfRows();
+        int colCount =sheet.getRow(0).getLastCellNum();
 
-        Object[][] data = new Object[rowCount][6]; // row x col --> ( records x inputs )
+        Object[][] data = new Object[rowCount][colCount]; // row x col --> ( records x inputs )
 
         for(int i=0; i<rowCount ;i++)
         {
